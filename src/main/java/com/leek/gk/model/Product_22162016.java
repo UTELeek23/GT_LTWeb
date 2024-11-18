@@ -1,6 +1,6 @@
 package com.leek.gk.model;
 
-public class Product {
+public class Product_22162016 {
     private int ProductID;
     private String ProductName;
     private String ProductDescription;

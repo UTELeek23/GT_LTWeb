@@ -1,6 +1,6 @@
 package com.leek.gk.model;
 
-public class Cart {
+public class Cart_22162016 {
     private int UserID;
     private int ProductID;
     private int Amount;

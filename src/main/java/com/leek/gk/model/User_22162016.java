@@ -1,6 +1,6 @@
 package com.leek.gk.model;
 
-public class User {
+public class User_22162016 {
     private int UserID;
     private String UserName;
     private String Password;

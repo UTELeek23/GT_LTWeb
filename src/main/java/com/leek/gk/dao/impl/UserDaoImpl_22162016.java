@@ -2,17 +2,16 @@ package com.leek.gk.dao.impl;
 import com.leek.gk.Connect.DatabaseUtils;
 
 import com.leek.gk.dao.IUserDao;
-import com.leek.gk.model.User;
+import com.leek.gk.model.User_22162016;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class UserDaoImpl implements IUserDao {
+public class UserDaoImpl_22162016 implements IUserDao {
     @Override
-    public User findByUsername(String username) {
+    public User_22162016 findByUsername(String username) {
         System.out.println(username);
         String query = "SELECT * FROM users WHERE username = ?";
         try (Connection connection = DatabaseUtils.getConnection();
@@ -21,7 +20,7 @@ public class UserDaoImpl implements IUserDao {
             statement.setString(1, username);
             try (ResultSet resultSet = statement.executeQuery()) {
                 if (resultSet.next()) {
-                    User user = new User();
+                    User_22162016 user = new User_22162016();
                     user.setUserID(resultSet.getInt("UserID"));
                     user.setUserName(resultSet.getString("Username"));
                     user.setPassword(resultSet.getString("Password"));
@@ -37,15 +36,15 @@ public class UserDaoImpl implements IUserDao {
     }
 
     @Override
-    public List<User> findAll() {
-        List<User> users = new ArrayList<>();
+    public List<User_22162016> findAll() {
+        List<User_22162016> users = new ArrayList<>();
         String query = "SELECT * FROM users";
         try (Connection connection = DatabaseUtils.getConnection();
              PreparedStatement statement = connection.prepareStatement(query);
              ResultSet resultSet = statement.executeQuery()) {
 
             while (resultSet.next()) {
-                User user = new User();
+                User_22162016 user = new User_22162016();
                 user.setUserID(resultSet.getInt("UserID"));
                 user.setUserName(resultSet.getString("Username"));
                 user.setPassword(resultSet.getString("Password"));

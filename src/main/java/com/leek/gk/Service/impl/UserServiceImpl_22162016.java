@@ -2,18 +2,17 @@ package com.leek.gk.Service.impl;
 
 import com.leek.gk.Service.IUserService;
 import com.leek.gk.dao.IUserDao;
-import com.leek.gk.dao.impl.UserDaoImpl;
-import com.leek.gk.model.User;
-public class UserServiceImpl implements IUserService {
+import com.leek.gk.model.User_22162016;
+public class UserServiceImpl_22162016 implements IUserService {
     private IUserDao userDao;
 
-    public UserServiceImpl(IUserDao userDao) {
+    public UserServiceImpl_22162016(IUserDao userDao) {
         this.userDao = userDao;
     }
 
     @Override
-    public User login(String username, String password) {
-        User user = userDao.findByUsername(username);
+    public User_22162016 login(String username, String password) {
+        User_22162016 user = userDao.findByUsername(username);
         if (user != null && user.getPassword().equals(password)) {
             return user;
         }

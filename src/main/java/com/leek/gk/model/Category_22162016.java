@@ -1,6 +1,6 @@
 package com.leek.gk.model;
 
-public class Category {
+public class Category_22162016 {
     private int CategoryID;
     private String CategoryName;
     private String Icon;

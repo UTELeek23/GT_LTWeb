@@ -1,10 +1,9 @@
 package com.leek.gk.Controller.User;
 
-import com.leek.gk.Connect.DatabaseUtils;
-import com.leek.gk.dao.impl.UserDaoImpl;
-import com.leek.gk.model.User;
+import com.leek.gk.dao.impl.UserDaoImpl_22162016;
+import com.leek.gk.model.User_22162016;
 import com.leek.gk.Service.IUserService;
-import com.leek.gk.Service.impl.UserServiceImpl;
+import com.leek.gk.Service.impl.UserServiceImpl_22162016;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -12,16 +11,15 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 
-import java.io.Console;
 import java.io.IOException;
 
 @WebServlet("/login")
-public class UserController extends HttpServlet {
+public class UserController_22162016 extends HttpServlet {
     private IUserService userService;
 
     @Override
     public void init() throws ServletException {
-        userService = new UserServiceImpl(new UserDaoImpl());
+        userService = new UserServiceImpl_22162016(new UserDaoImpl_22162016());
     }
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -33,7 +31,7 @@ public class UserController extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
-        User user = userService.login(username, password);
+        User_22162016 user = userService.login(username, password);
         if (user != null) {
             request.getSession().setAttribute("user", user);
             if (user.isAdmin()) {
